@@ -55,8 +55,13 @@ function handleText(textNode)
 	var oldValue = textNode.nodeValue;
 	var v = oldValue;
 	var tagged = v.replace(/([^`]*)`\s*([^`]*)\s*`([^`]*)/ig, "$1 <code class=\"cd-ext\"> $2 </code> $3");
-  if(v.match(/([^`]*)`([^`]*)`([^`]*)/ig)){
-		console.log("count");
+	if(tagged == oldValue){
+		tagged = v.replace(/([^`]*)\s_(\S[^_]*\S)_\s([^`]*)/ig, "$1 <i> $2 </i> $3");
+	}
+	if(tagged == oldValue){
+		tagged = v.replace(/([^`]*)\s\*(\S[^\*]*\S)\*([^`]*)/ig, "$1 <b> $2 </b> $3");
+	}
+  if(tagged != oldValue){
     var newNode = document.createElement('span');
     var nodes = $.parseHTML(tagged);
     var arrayLength = nodes.length;
