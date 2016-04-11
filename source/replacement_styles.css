@@ -1,0 +1,10 @@
+code.cd-ext {
+    color: #c25;
+    background-color: #f7f7f9;
+    border-radius:1.3em;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+    border: 1px solid #e1e1e8;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+}
