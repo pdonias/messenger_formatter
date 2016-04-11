@@ -53,17 +53,14 @@ function handleText(textNode)
 	}
 
 	var oldValue = textNode.nodeValue;
-	var v = oldValue;
-	var tagged = v.replace(/([^`]*)`\s*([^`]*)\s*`([^`]*)/ig, "$1 <code class=\"cd-ext\"> $2 </code> $3");
-	if(tagged == oldValue){
-		tagged = v.replace(/([^`]*)\s_(\S[^_]*\S)_\s([^`]*)/ig, "$1 <i> $2 </i> $3");
+	var newTags = oldValue.replace(/([^`]*)`\s*([^`]*)\s*`([^`]*)/ig, "$1 <code class=\"cd-ext\"> $2 </code> $3");
+	if(newTags == oldValue){	//if unchanged, do italics
+		newTags = oldValue.replace(/([^_]*)\s_(\S[^_]*\S)(?:_$|_\s([^_]*))/ig, "$1 <i> $2 </i> $3");
+		newTags = newTags.replace(/([^\*]*)\s\*(\S[^\*]*\S)\*([^\*]*)/ig, "$1 <b> $2 </b> $3");
 	}
-	if(tagged == oldValue){
-		tagged = v.replace(/([^`]*)\s\*(\S[^\*]*\S)\*([^`]*)/ig, "$1 <b> $2 </b> $3");
-	}
-  if(tagged != oldValue){
+  if(newTags != oldValue){
     var newNode = document.createElement('span');
-    var nodes = $.parseHTML(tagged);
+    var nodes = $.parseHTML(newTags);
     var arrayLength = nodes.length;
     for (var i = 0; i < arrayLength; i++) {
       newNode.appendChild(nodes[i]);
