@@ -70,9 +70,9 @@ function handleText(textNode)
 	// if(oldValue.match(/\/giphy\s.*/)){
 	// 	var request = oldValue.replace(/\/giphy\s(.*)/, "https://api.giphy.com/v1/stickers/search?q=$1&api_key=dc6zaTOxFJmzC&limit=1");
 	// 	request = request.replace(/\s/,"+");
-	// 
+	//
 	// 	var image_id = fetchGIFID(request);
-	// 
+	//
 	// 	if(image_id != null){
 	// 		var image_tags = image_id.replace(/(.*)/,"<img src=\"https://media.giphy.com/media/$1/giphy.gif\" width=100px height=auto>");
 	// 		textNode.parentNode.insertBefore($.parseHTML(image_tags)[0], textNode);
@@ -80,9 +80,10 @@ function handleText(textNode)
 	// 	}
 	// }else{
 		var newTags = oldValue.replace(/([^`]*)`\s*([^`]*)\s*`([^`]*)/ig, "$1 <code class=\"cd-ext\"> $2 </code> $3");
-		if(newTags == oldValue){	//if not code, do italics and bold
-			newTags = oldValue.replace(/(?:([^_]*)\s_|^_)(\S[^_]*\S)(?:_$|_\s([^_]*))/ig, "$1 <i> $2 </i> $3");
-			newTags = newTags.replace(/(?:([^\*]*)\s\*|^\*)(\S[^\*]*\S)(?:\*$|\*\s([^\*]*))/ig, "$1 <b> $2 </b> $3");
+		if(newTags == oldValue){	//if not code, do italics and bold and strike-through
+			newTags = oldValue.replace(/(?:([^_]*)\s_|^_)(\S[^_]*\S)(?:_$|_\s([^_]*))/ig, "$1 <i>$2</i> $3");
+			newTags = newTags.replace(/(?:([^\*]*)\s\*|^\*)(\S[^\*]*\S)(?:\*$|\*\s([^\*]*))/ig, "$1 <b>$2</b> $3");
+			newTags = newTags.replace(/(?:([^~]*)\s~|^~)(\S[^~]*\S)(?:~$|~\s([^~]*))/ig, "$1 <s>$2</s> $3");
 		}
 	  if(newTags != oldValue){
 	    var newNode = document.createElement('span');
