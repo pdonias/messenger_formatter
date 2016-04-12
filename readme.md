@@ -1,5 +1,7 @@
-*Facebook Messenger Formatter*
+**Facebook Messenger Formatter**
 
-Currently supports code tags with `backticks`
+Currently supports code tags with `backticks`, *bold*, _italics_, and ~strike~.
 
-Based on the `SJW to Skeleton` extension by Alex Hong
+Extension available here: https://goo.gl/QHHGDf
+
+Initially based on the `SJW to Skeleton` extension by Alex Hong
