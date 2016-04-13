@@ -81,9 +81,9 @@ function handleText(textNode)
 	// }else{
 		var newTags = oldValue.replace(/([^`]*)`\s*([^`]*)\s*`([^`]*)/ig, "$1 <code class=\"cd-ext\"> $2 </code> $3");
 		if(newTags == oldValue){	//if not code, do italics and bold and strike-through
-			newTags = oldValue.replace(/(?:([^_]*)\s_|^_)(\S[^_]*\S)(?:_$|_\s([^_]*))/ig, "$1 <i>$2</i> $3");
-			newTags = newTags.replace(/(?:([^\*]*)\s\*|^\*)(\S[^\*]*\S)(?:\*$|\*\s([^\*]*))/ig, "$1 <b>$2</b> $3");
-			newTags = newTags.replace(/(?:([^~]*)\s~|^~)(\S[^~]*\S)(?:~$|~\s([^~]*))/ig, "$1 <s>$2</s> $3");
+			newTags = oldValue.replace(/(?:([^_]*)\s_|^_)(\S[^_]*\S)(?:_$|_([^a-z0-9][^_]*))/ig, "$1 <i>$2</i>$3");
+			newTags = newTags.replace(/(?:([^\*]*)\s\*|^\*)(\S[^\*]*\S)(?:\*$|\*([^a-z0-9][^\*]*))/ig, "$1 <b>$2</b>$3");
+			newTags = newTags.replace(/(?:([^~]*)\s~|^~)(\S[^~]*\S)(?:~$|~([^a-z0-9][^~]*))/ig, "$1 <s>$2</s>$3");
 		}
 	  if(newTags != oldValue){
 	    var newNode = document.createElement('span');
