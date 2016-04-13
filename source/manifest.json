@@ -3,7 +3,7 @@
 
   "name": "Messenger Markdown",
   "description": "Formatting abilities for Facebook Messenger",
-  "version": "0.4",
+  "version": "0.41",
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "credits.html"
@@ -12,7 +12,7 @@
   [
     {
       "matches": ["https://www.facebook.com/*", "https://www.messenger.com/*"],
-      "js": ["jquery.min.js", "replacer.js"],
+      "js": ["jQuery.min.js", "replacer.js"],
       "css":["replacement_styles.css"],
       "run_at": "document_end"
     }
