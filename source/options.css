@@ -1,0 +1,32 @@
+body {
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 100%;
+}
+.box {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 400px;
+  min-width: 300px;
+  padding: 10px;
+  border: 0px;
+}
+p{
+  font-size:7px;
+}
+.selected {
+  background-color: #0077e5;
+  color: #fff;
+  border: 2px solid #0077e5;
+}
+a {
+  padding: 0px 5px;
+  border: 2px solid #0077e5;
+  color: #000;
+  text-decoration: none;
+}
+h4 {
+  color: #0077e5;
+}
+pre {
+  padding: 0px;
+}

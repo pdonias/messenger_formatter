@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Extension Options</title>
+    <link rel="stylesheet" type="text/css" href="guide.css">
+    <link rel="stylesheet" type="text/css" href="options.css">
+  </head>
+  <body>
+    <div class="box">
+      <a href="credits.html"> Quickguide </a>
+      <a class="selected"> Options </a>
+      <p> Enabled Formatting</p>
+      <table>
+        <tr>
+          <td>
+            <label>
+              <input type="checkbox" id="code">
+              <code class="cd-ext">Code</code>
+            </label><br>
+          </td>
+          <td>
+            <label>
+              <input type="checkbox" id="italics">
+              <i>Italics</i>
+            </label><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              <input type="checkbox" id="bold">
+              <b>Bold</b>
+            </label><br>
+          </td>
+          <td>
+            <label>
+              <input type="checkbox" id="strike">
+              <s>Strike</s>
+            </label><br>
+          </td>
+        </tr>
+      </table>
+      <button id="save">Save</button>
+    </div>
+    <div id="status"></div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
