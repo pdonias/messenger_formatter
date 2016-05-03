@@ -77,7 +77,7 @@ function handleText(textNode)
 		return false;
 	}
 
-	var oldValue = textNode.nodeValue;
+	var oldValue = textNode.nodeValue.replace("<", "&lt;").replace(">", "&gt;");
 	var newTags = oldValue;
 	if(codeTags) newTags = oldValue.replace(/([^`]*)`\s*([^`]*)\s*`([^`]*)/ig, "$1 <code class=\"cd-ext\"> $2 </code> $3");
 
