@@ -3,7 +3,7 @@
 
   "name": "Messenger Markdown",
   "description": "Formatting abilities for Facebook Messenger",
-  "version": "0.51",
+  "version": "0.52",
   "options_page": "options.html",
   "browser_action": {
     "default_icon": "icon.png",

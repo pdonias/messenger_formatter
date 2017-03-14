@@ -79,7 +79,7 @@ function handleText(textNode)
 
 	var oldValue = textNode.nodeValue.replace("<", "&lt;").replace(">", "&gt;");
 	var newTags = oldValue;
-	if(codeTags) newTags = oldValue.replace(/([^`]*)`\s*([^`]*)\s*`([^`]*)/ig, "$1 <code class=\"cd-ext\"> $2 </code> $3");
+	if(codeTags) newTags = oldValue.replace(/([^`]*)[^`]?`\h*([^`(\r\n?)\n]+?)\h*`([^`]*)/ig, "$1 <code class=\"cd-ext\"> $2 </code> $3");
 
 	if(newTags == oldValue && (italicTags || boldTags || strikeTags)){	//if not code, do italics and bold and strike-through
 		if(italicTags) newTags = oldValue.replace(/(?:([^_]*\s)_|^_)(\S[^_]*\S)(?:_$|_([^a-z0-9][^_]*))/ig, "$1<i>$2</i>$3");
